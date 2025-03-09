@@ -1,0 +1,1456 @@
+/* ********** GENERAL CSS ********** */
+@import url(fonts.css);
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1,
+h2 {
+  font-family: "Beufort";
+  font-weight: 500;
+  background: linear-gradient(#f4ce52, #785a28);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h1 {
+  font-size: 64px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-family: "Beufort";
+  font-weight: 500;
+  background: linear-gradient(#ffffff, #8f8f8f);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body {
+  background-color: #010a13;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+p,
+a,
+input,
+select,
+option,
+button {
+  color: #ffffff;
+  font-size: 20px;
+  font-family: "Spiegel";
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+select {
+  border: 0px solid;
+  color: #dfdfdf;
+  width: 100%;
+  margin: 2px 0;
+  background-color: transparent;
+  appearance: none;
+}
+
+select:focus {
+  outline: none;
+}
+
+option {
+  color: #dfdfdf;
+  background-color: #3c3c41;
+}
+
+button,
+.pointer {
+  cursor: pointer;
+}
+
+button {
+  transition: color 300ms ease;
+}
+
+button:hover {
+  color: #c89b3c;
+}
+
+.not-allowed {
+  cursor: not-allowed;
+}
+
+.silver {
+  background: linear-gradient(#ffffff, #8f8f8f);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.container {
+  width: 100%;
+  padding: 80px 0;
+}
+
+.row {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.landing-page {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ********** NAV BAR ********** */
+
+nav {
+  width: 100%;
+  height: 140px;
+  margin: 0 auto;
+  padding: 0 32px;
+  background-color: #1e282d;
+  border-bottom: 8px solid #c89b3c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main__container {
+  display: flex;
+  align-items: center;
+}
+
+.main__logo--wrapper {
+  width: 100px;
+}
+
+.main__logo--img {
+  width: 100%;
+  vertical-align: middle;
+  background: linear-gradient(#010a13, #010a13) padding-box,
+    linear-gradient(#010a1380, #3c3c4180, #61616980, #3c3c4180, #010a1380)
+      border-box,
+    linear-gradient(to right, #010a13, #3c3c41, #616169, #3c3c41, #010a13)
+      border-box;
+  border-radius: 20%;
+  border: 4px solid transparent;
+}
+
+.main__title {
+  font-weight: 700;
+  padding-left: 16px;
+}
+
+.nav__link--list {
+  position: inherit;
+  display: flex;
+  align-items: center;
+}
+
+.nav__link {
+  height: 45px;
+  margin-right: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.nav__link:last-child {
+  margin-right: 0;
+}
+
+.valorant {
+  height: 65px;
+}
+
+.nav__link--anchor {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+}
+
+.riot__logo--wrapper {
+  width: 40px;
+  margin-right: 12px;
+}
+
+.valorant .riot__logo--wrapper {
+  width: 52px;
+}
+
+.riot__logo--img {
+  width: 100%;
+}
+
+.riot__link--wrapper {
+  width: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.valorant .riot__link--wrapper {
+  width: 150px;
+}
+
+.riot__link--img {
+  width: 100%;
+}
+
+.valorant .tooltiptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: black;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 5;
+  top: 96px;
+  right: 68px;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 300ms ease, visibility 300ms ease;
+}
+
+.valorant:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.link-white,
+.link-red {
+  filter: invert(100%) sepia(1%) saturate(2%) hue-rotate(285deg)
+    brightness(104%) contrast(101%);
+  transition: filter 300ms ease, scale 300ms ease;
+}
+
+.nav__link:hover .link-white {
+  filter: invert(91%) sepia(30%) saturate(3043%) hue-rotate(326deg)
+    brightness(83%) contrast(85%);
+  scale: 1.05;
+}
+
+.nav__link:hover .link-red {
+  filter: invert(43%) sepia(70%) saturate(3225%) hue-rotate(328deg)
+    brightness(99%) contrast(105%);
+  scale: 1.05;
+}
+
+/* ********** HEADER ********** */
+
+.header__title {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+/* ----- Container ----- */
+.header__game-name {
+  width: 100%;
+  height: 80px;
+  background-color: #3c3c41;
+  border-radius: 200px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.search__para {
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+.search__region--container,
+.search__name--container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ----- Region ----- */
+.search__region--container {
+  width: calc(45% - 61px);
+  padding-left: 32px;
+  padding-right: 24px;
+}
+
+.search__select--container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search__arrow--wrapper {
+  margin-left: 4px;
+}
+
+.search__arrow--img {
+  font-size: 20px;
+  color: #dfdfdf;
+}
+
+/* ----- Summoner Name ----- */
+.header__game-name::before {
+  content: "";
+  position: relative;
+  left: calc(45% - 73px);
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(#3c3c41, #999999, #ffffff, #999999, #3c3c41);
+}
+
+.search__name--container {
+  width: 55%;
+}
+
+.search__submit {
+  width: 60px;
+  height: 80px;
+  font-size: 32px;
+  background-color: transparent;
+  border-radius: 0 100% 100% 0;
+  border: none;
+}
+
+/* ----- Search Button ----- */
+.search__input {
+  color: #dfdfdf;
+  width: 100%;
+  padding: 2px 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+/* ********** CHAMPIONS ********** */
+/* ----- INDEX SECTION ----- */
+#index-champions .container {
+  padding-top: 0;
+  padding-bottom: 40px;
+}
+
+.index-champions__subtitle,
+.index-champions__para {
+  text-align: center;
+}
+
+.index-champions__display {
+  position: relative;
+  margin-top: 60px;
+  width: 100%;
+  height: 680px;
+}
+
+.index-champion--wrapper:last-child {
+  width: 400px;
+}
+
+.index-champion--wrapper {
+  position: absolute;
+  width: 360px;
+  border-radius: 24px;
+  box-shadow: 0 0 24px #c89b3c;
+  transition: scale 300ms ease;
+}
+
+.index-champion--wrapper:hover {
+  scale: 1.02;
+}
+
+.index-champ--one {
+  top: calc(50% - 300px);
+  left: calc(50% - 200px);
+}
+
+.index-champ--two {
+  top: calc(60% - 270px);
+  left: calc(22% - 180px);
+  transform: rotate(345deg);
+}
+
+.index-champ--three {
+  top: calc(60% - 270px);
+  right: calc(22% - 180px);
+  transform: rotate(15deg);
+}
+
+.index-champion--img {
+  width: 100%;
+  vertical-align: middle;
+  background: linear-gradient(#010a13, #010a13) padding-box,
+    linear-gradient(#010a1380, #3c3c4180, #61616980, #3c3c4180, #010a1380)
+      border-box,
+    linear-gradient(to right, #010a13, #3c3c41, #616169, #3c3c41, #010a13)
+      border-box;
+  border-radius: 24px;
+  border: 4px solid transparent;
+}
+
+/* ----- SUMMONERS SECTION ----- */
+#summoner-champions {
+  position: relative;
+  border: 10px solid;
+  border-image-slice: 1;
+  border-width: 5px;
+  border-image-source: linear-gradient(to right, #f4ce52, #785a28);
+  border-left: 0;
+  border-right: 0;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.summoner__bg--img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(https://wiki.leagueoflegends.com/en-us/images/Celestial_Realm.png?f80cb);
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+
+  -webkit-filter: contrast(120%);
+  -moz-filter: contrast(120%);
+  -o-filter: contrast(120%);
+  -ms-filter: contrast(120%);
+  filter: contrast(120%);
+}
+
+#summoner-champions .container {
+  padding: 40px 0;
+}
+#summoner-champions .row {
+  max-width: 1200px;
+}
+
+.summoner {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.summoner__loading {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 250px 0;
+}
+
+.summoner__loading--subtitle {
+  display: none !important;
+  -webkit-animation: fadeinout 3s linear forwards;
+  animation: fadeinout 3s linear forwards;
+  opacity: 0;
+}
+
+.summoner__loading .summoner__loading--subtitle {
+  display: block !important;
+}
+
+@-webkit-keyframes fadeinout {
+  0%, 100% { opacity: 0; }
+  25%, 75% { opacity: 1; }
+}
+
+@keyframes fadeinout {
+  0%, 100% { opacity: 0; }
+  25%, 75% { opacity: 1; }
+}
+
+.summoner__profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.summoner__profile--display {
+  display: flex;
+  align-items: center;
+  margin: 40px 0;
+}
+
+.summoner__profile--wrapper {
+  width: 100px;
+  border-radius: 24px;
+}
+
+.summoner__profile--img {
+  width: 100%;
+  vertical-align: middle;
+  background: linear-gradient(#010a13, #010a13) padding-box,
+    linear-gradient(#010a1380, #3c3c4180, #61616980, #3c3c4180, #010a1380)
+      border-box,
+    linear-gradient(to right, #010a13, #3c3c41, #616169, #3c3c41, #010a13)
+      border-box;
+  border-radius: 24px;
+  border: 4px solid transparent;
+}
+
+.summoner__profile--name {
+  font-size: 56px;
+  margin-left: 40px;
+}
+
+.summoner__profile--filter {
+  display: flex;
+  align-items: center;
+}
+
+.summoner__profile--filter-sub {
+  font-size: 32px;
+  margin-right: 20px;
+}
+
+.summoner__filter {
+  margin-top: 4px;
+  margin-bottom: 0;
+  padding: 4px 8px;
+  border: 2px solid #010a1380;
+  background-color: #010a13;
+  appearance: auto;
+}
+
+.summoner__filter option {
+  background-color: #010a13;
+}
+
+.summoner-champion--wrapper {
+  width: 360px;
+  border-radius: 24px;
+  box-shadow: 0 0 24px #ffffff;
+}
+
+.summoner-champion__display {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.summoner-champion--img {
+  width: 100%;
+  vertical-align: middle;
+  background: linear-gradient(#010a13, #010a13) padding-box,
+    linear-gradient(#010a1380, #3c3c4180, #61616980, #3c3c4180, #010a1380)
+      border-box,
+    linear-gradient(to right, #010a13, #3c3c41, #616169, #3c3c41, #010a13)
+      border-box;
+  border-radius: 24px;
+  border: 4px solid transparent;
+}
+
+.champion--img {
+  width: auto;
+}
+
+.summoner-champion__info--container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 64px;
+}
+
+.summoner-champion__name{
+  font-size: 100px;
+}
+
+.summoner-champion__title {
+  font-size: 40px;
+  margin-bottom: 12px;
+}
+
+.champion__title {
+  font-size: 48px;
+  margin-bottom: 60px;
+}
+
+.summoner-champion__description {
+  color: #dfdfdf;
+  font-size: 32px;
+  text-align: center;
+}
+
+.champion--description {
+  text-align: justify;
+  font-size: 32px;
+}
+
+/* ********** FOOTER ********** */
+footer .container {
+  padding-top: 120px;
+  padding-bottom: 20px;
+}
+
+footer .row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer__subtitle {
+  padding-bottom: 16px;
+}
+
+.footer__social--list {
+  width: 100%;
+  max-width: 240px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer__social--link {
+  font-size: 24px;
+  text-align: center;
+  transition: color 300ms ease;
+}
+
+.footer__social--link:hover {
+  color: #f4ce52;
+}
+
+.footer__copyright {
+  width: 100%;
+  max-width: 700px;
+  padding-top: 80px;
+}
+
+.footer__para {
+  font-size: 12px;
+  text-align: center;
+  padding-bottom: 4px;
+}
+
+.footer__para:first-child {
+  padding-bottom: 16px;
+}
+
+.footer__para:last-child {
+  padding-bottom: 0;
+}
+
+/* SMALL DESKTOPS, LAPTOPS */
+@media (max-width: 1280px) {
+  h1 {
+    font-size: 48px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  p,
+  a,
+  input,
+  select,
+  option,
+  button {
+    font-size: 16px;
+  }
+
+  .row {
+    max-width: 840px;
+  }
+
+  .main__logo--wrapper {
+    width: 88px;
+  }
+
+  .riot__logo--wrapper {
+    width: 36px;
+  }
+
+  .riot__link--wrapper {
+    width: 92px;
+  }
+
+  .valorant .riot__logo--wrapper {
+    width: 48px;
+  }
+
+  .valorant .riot__link--wrapper {
+    width: 120px;
+  }
+
+  .valorant .tooltiptext {
+    top: 90px;
+    right: 40px;
+  }
+
+  .header__game-name {
+    height: 72px;
+  }
+
+  .search__para {
+    font-size: 20px;
+  }
+
+  .search__arrow--img {
+    font-size: 16px;
+  }
+
+  .header__game-name::before {
+    left: calc(45% - 69px);
+  }
+
+  .search__submit {
+    font-size: 24px;
+  }
+
+  .index-champion--wrapper:last-child {
+    width: 360px;
+  }
+
+  .index-champions__display {
+    height: 600px;
+  }
+
+  .index-champion--wrapper {
+    width: 320px;
+  }
+
+  .index-champ--one {
+    top: calc(50% - 270px);
+    left: calc(50% - 180px);
+  }
+
+  .index-champ--two {
+    top: calc(60% - 240px);
+    left: calc(20% - 160px);
+  }
+
+  .index-champ--three {
+    top: calc(60% - 240px);
+    right: calc(20% - 160px);
+  }
+
+  #summoner-champions .row {
+    max-width: 960px;
+  }
+
+  .summoner-champion__title {
+    font-size: 48px;
+  }
+
+  .summoner-champion__description {
+    font-size: 24px;
+  }
+
+  .footer__social--list {
+    max-width: 220px;
+  }
+
+  .footer__social--link {
+    font-size: 20px;
+  }
+}
+/* SMALL LAPTOPS, LANDSCAPE TABLETS */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 36px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  p,
+  a,
+  input,
+  select,
+  option,
+  button {
+    font-size: 12px;
+  }
+
+  .row {
+    max-width: 720px;
+  }
+
+  nav {
+    border-bottom: 6px solid #c89b3c;
+    padding: 0 16px;
+    height: 80px;
+  }
+
+  .main__logo--wrapper {
+    width: 48px;
+  }
+
+  .main__logo--img {
+    border: 2px solid transparent;
+  }
+
+  .nav__link {
+    margin-right: 16px;
+  }
+
+  .riot__logo--wrapper {
+    width: 24px;
+    margin-right: 8px;
+  }
+
+  .riot__link--wrapper {
+    width: 72px;
+  }
+
+  .valorant .riot__logo--wrapper {
+    width: 36px;
+  }
+
+  .valorant .riot__link--wrapper {
+    width: 92px;
+  }
+
+  .valorant .tooltiptext {
+    width: 124px;
+    font-size: 12px;
+    top: 48px;
+    right: 24px;
+  }
+
+  .search__para {
+    font-size: 16px;
+  }
+
+  .search__region--container {
+    padding-left: 24px;
+    padding-right: 16px;
+  }
+
+  .search__arrow--img {
+    font-size: 12px;
+  }
+
+  .search__submit {
+    font-size: 20px;
+  }
+
+  .index-champion--wrapper:last-child {
+    width: 280px;
+  }
+
+  .index-champions__display {
+    height: 480px;
+  }
+
+  .index-champion--wrapper {
+    width: 240px;
+  }
+
+  .index-champ--one {
+    top: calc(50% - 210px);
+    left: calc(50% - 140px);
+  }
+
+  .index-champ--two {
+    top: calc(61% - 180px);
+    left: calc(23% - 120px);
+  }
+
+  .index-champ--three {
+    top: calc(61% - 180px);
+    right: calc(23% - 120px);
+  }
+
+  .index-champion--img {
+    border-radius: 20px;
+  }
+
+  #summoner-champions .container {
+    padding: 24px 0;
+  }
+
+  #summoner-champions .row {
+    max-width: 680px;
+  }
+
+  .summoner-champion--wrapper {
+    width: 320px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px #ffffff;
+  }
+
+  .summoner-champion--img {
+    border-radius: 20px;
+  }
+
+  .summoner-champion__title {
+    font-size: 36px;
+    margin-bottom: 8px;
+  }
+
+  .summoner-champion__description {
+    font-size: 20px;
+  }
+
+  footer .container {
+    padding-top: 100px;
+  }
+
+  .footer__subtitle {
+    padding-bottom: 16px;
+  }
+
+  .footer__social--list {
+    max-width: 180px;
+  }
+
+  .footer__copyright {
+    padding-top: 60px;
+  }
+}
+/* TABLETS, LANDSCAPE PHONES */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p,
+  a,
+  input,
+  select,
+  option,
+  button {
+    font-size: 10px;
+  }
+
+  .container {
+    padding: 32px 0;
+  }
+
+  .row {
+    max-width: 500px;
+  }
+
+  nav {
+    border-bottom: 4px solid #c89b3c;
+    height: 60px;
+    padding: 0 12px;
+  }
+
+  .main__logo--wrapper {
+    width: 40px;
+  }
+
+  .main__title {
+    padding-left: 12px;
+  }
+
+  .nav__link {
+    margin-right: 8px;
+  }
+
+  .riot__logo--wrapper {
+    width: 20px;
+  }
+
+  .riot__link--wrapper {
+    width: 64px;
+  }
+
+  .valorant .riot__logo--wrapper {
+    width: 28px;
+  }
+
+  .valorant .riot__link--wrapper {
+    width: 80px;
+  }
+
+  .valorant .tooltiptext {
+    width: 100px;
+    font-size: 10px;
+    top: 36px;
+    right: 24px;
+  }
+
+  .header__game-name {
+    height: 60px;
+  }
+
+  .search__para {
+    font-size: 12px;
+  }
+
+  .search__region--container {
+    width: calc(45% - 31px);
+    padding-left: 20px;
+    padding-right: 12px;
+  }
+
+  .search__arrow--img {
+    font-size: 10px;
+  }
+
+  .header__game-name::before {
+    left: calc(45% - 37px);
+    height: 30px;
+  }
+
+  .search__submit {
+    width: 30px;
+    height: 60px;
+    font-size: 16px;
+  }
+
+  .index-champion--wrapper:last-child {
+    width: 200px;
+  }
+
+  .index-champions__display {
+    height: 320px;
+  }
+
+  .index-champion--wrapper {
+    width: 160px;
+  }
+
+  .index-champ--one {
+    top: calc(50% - 150px);
+    left: calc(50% - 100px);
+  }
+
+  .index-champ--two {
+    top: calc(60% - 120px);
+    left: calc(24% - 80px);
+  }
+
+  .index-champ--three {
+    top: calc(60% - 120px);
+    right: calc(24% - 80px);
+  }
+
+  .index-champion--img {
+    border-radius: 16px;
+  }
+
+  #summoner-champions .container {
+    padding: 20px 0;
+  }
+
+  #summoner-champions .row {
+    max-width: 560px;
+  }
+
+  .summoner-champion--wrapper {
+    width: 240px;
+    border-radius: 16px;
+    box-shadow: 0 0 16px #ffffff;
+  }
+
+  .summoner-champion--img {
+    border-radius: 16px;
+  }
+
+  .summoner-champion__info--container {
+    margin: 0 32px;
+  }
+
+  .summoner-champion__title {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  .summoner-champion__description {
+    font-size: 16px;
+  }
+
+  footer .container {
+    padding-top: 60px;
+  }
+
+  .footer__social--list {
+    max-width: 124px;
+  }
+
+  .footer__social--link {
+    font-size: 16px;
+  }
+
+  .footer__para {
+    font-size: 10px;
+  }
+
+  .footer__copyright {
+    padding-top: 40px;
+  }
+}
+/* PHONES, LANDSCAPE SMALL PHONES */
+@media (max-width: 640px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+
+  p,
+  a,
+  input,
+  select,
+  option,
+  button {
+    font-size: 10px;
+  }
+
+  .container {
+    padding: 24px 0;
+  }
+
+  .row {
+    max-width: 420px;
+  }
+
+  nav {
+    border-bottom: 2px solid #c89b3c;
+    height: 52px;
+    padding: 0 8px;
+  }
+
+  .main__logo--wrapper {
+    width: 32px;
+  }
+
+  .main__title {
+    padding-left: 8px;
+  }
+
+  .nav__link {
+    margin-right: 6px;
+  }
+
+  .riot__logo--wrapper {
+    width: 16px;
+  }
+
+  .riot__link--wrapper {
+    width: 48px;
+  }
+
+  .valorant .riot__logo--wrapper {
+    width: 20px;
+  }
+
+  .valorant .riot__link--wrapper {
+    width: 64px;
+  }
+
+  .valorant .tooltiptext {
+    width: 76px;
+    font-size: 10px;
+    top: 32px;
+    right: 20px;
+  }
+
+  #index--champions .container {
+    padding-bottom: 20px;
+  }
+
+  .header__title {
+    margin-bottom: 16px;
+  }
+
+  .header__game-name {
+    height: 40px;
+  }
+
+  .search__para {
+    font-size: 10px;
+    margin-bottom: 0;
+  }
+
+  .search__region--container {
+    width: calc(45% - 31px);
+    padding-left: 16px;
+  }
+
+  .search__arrow--img {
+    font-size: 10px;
+  }
+
+  .header__game-name::before {
+    left: calc(45% - 37px);
+    height: 20px;
+  }
+
+  .search__submit {
+    width: 32px;
+    height: 40px;
+    font-size: 12px;
+  }
+
+  .index-champion--wrapper:last-child {
+    width: 160px;
+  }
+
+  .index-champions__display {
+    height: 280px;
+    margin-top: 32px;
+  }
+
+  .index-champion--wrapper {
+    width: 120px;
+  }
+
+  .index-champ--one {
+    top: calc(50% - 120px);
+    left: calc(50% - 80px);
+  }
+
+  .index-champ--two {
+    top: calc(60% - 80px);
+    left: calc(25% - 60px);
+  }
+
+  .index-champ--three {
+    top: calc(60% - 80px);
+    right: calc(25% - 60px);
+  }
+
+  .index-champion--img {
+    border-radius: 12px;
+    border: 2px solid transparent;
+  }
+
+  #summoner-champions .container {
+    padding: 16px 0;
+  }
+
+  #summoner-champions .row {
+    max-width: 420px;
+  }
+
+  .summoner-champion--wrapper {
+    width: 120px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px #ffffff;
+  }
+
+  .summoner-champion--img {
+    border-radius: 12px;
+    border: 2px solid transparent;
+  }
+
+  .summoner-champion__info--container {
+    margin: 0 16px;
+  }
+
+  .summoner-champion__title {
+    font-size: 20px;
+    margin-bottom: 4px;
+  }
+
+  .summoner-champion__description {
+    font-size: 12px;
+  }
+
+  footer .container {
+    padding-top: 24px;
+  }
+
+  .footer__subtitle {
+    padding-bottom: 8px;
+  }
+
+  .footer__social--list {
+    max-width: 100px;
+  }
+
+  .footer__social--link {
+    font-size: 12px;
+  }
+
+  .footer__copyright {
+    padding-top: 32px;
+  }
+}
+/* SMALL PHONES, LANDSCAPE TINY PHONES */
+@media screen and (max-device-width: 480px) {
+  body {
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 16px;
+  }
+
+  h2 {
+    font-size: 12px;
+  }
+
+  p,
+  a,
+  input,
+  select,
+  option,
+  button {
+    font-size: 10px;
+  }
+
+  select {
+    margin: 0;
+  }
+
+  .container {
+    padding: 16px 0;
+  }
+
+  .row {
+    max-width: 360px;
+  }
+
+  nav {
+    height: 36px;
+  }
+
+  .main__logo--wrapper {
+    width: 24px;
+  }
+
+  .main__logo--img {
+    border: 1px solid transparent;
+  }
+
+  .main__title {
+    padding-left: 4px;
+  }
+
+  .riot__logo--wrapper {
+    width: 12px;
+  }
+
+  .riot__link--wrapper {
+    width: 32px;
+  }
+
+  .valorant .riot__logo--wrapper {
+    width: 14px;
+  }
+
+  .valorant .riot__link--wrapper {
+    width: 48px;
+  }
+
+  .valorant .tooltiptext {
+    width: 72px;
+    top: 24px;
+    right: 6px;
+  }
+
+  .header__game-name {
+    height: 32px;
+  }
+
+  .search__para {
+    font-size: 10px;
+  }
+
+  .search__region--container {
+    width: calc(50% - 17px);
+    padding-left: 8px;
+  }
+
+  .header__game-name::before {
+    left: calc(50% - 23px);
+    height: 16px;
+  }
+
+  .search__name--container {
+    width: 50%;
+  }
+
+  .search__submit {
+    width: 20px;
+    height: 32px;
+    font-size: 10px;
+  }
+
+  .index-champions__display {
+    height: 180px;
+    margin-top: 16px;
+  }
+
+  .index-champion--wrapper:last-child {
+    width: 100px;
+  }
+
+  .index-champion--wrapper {
+    width: 80px;
+  }
+
+  .index-champ--one {
+    top: calc(50% - 75px);
+    left: calc(50% - 50px);
+  }
+
+  .index-champ--two {
+    top: calc(60% - 50px);
+    left: calc(30% - 40px);
+  }
+
+  .index-champ--three {
+    top: calc(60% - 50px);
+    right: calc(30% - 40px);
+  }
+
+  .index-champion--img {
+    border-radius: 8px;
+  }
+
+  .summoner-champions__display {
+    justify-content: space-between;
+  }
+
+  .summoner-champion__info--container {
+    margin: 0 8px;
+  }
+
+  footer .container {
+    padding-top: 16px;
+  }
+
+  .footer__social--list {
+    max-width: 80px;
+  }
+
+  .footer__social--link {
+    font-size: 10px;
+  }
+
+  .footer__para:first-child {
+    padding-bottom: 8px;
+  }
+
+  .footer__copyright {
+    padding-top: 12px;
+  }
+}
