@@ -159,111 +159,23 @@ nav {
   padding-left: 16px;
 }
 
-.nav__link--list {
-  position: inherit;
-  display: flex;
-  align-items: center;
-}
-
-.nav__link {
-  height: 45px;
-  margin-right: 32px;
-  display: flex;
-  align-items: center;
-}
-
-.nav__link:last-child {
-  margin-right: 0;
-}
-
-.valorant {
-  height: 65px;
-}
-
-.nav__link--anchor {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-}
-
-.riot__logo--wrapper {
-  width: 40px;
-  margin-right: 12px;
-}
-
-.valorant .riot__logo--wrapper {
-  width: 52px;
-}
-
-.riot__logo--img {
-  width: 100%;
-}
-
-.riot__link--wrapper {
-  width: 100px;
-  display: flex;
-  align-items: center;
-}
-
-.valorant .riot__link--wrapper {
-  width: 150px;
-}
-
-.riot__link--img {
-  width: 100%;
-}
-
-.valorant .tooltiptext {
-  visibility: hidden;
-  width: 160px;
-  background-color: black;
-  color: #ffffff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-  position: absolute;
-  z-index: 5;
-  top: 96px;
-  right: 68px;
-  margin-left: -60px;
-  opacity: 0;
-  transition: opacity 300ms ease, visibility 300ms ease;
-}
-
-.valorant:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
-}
-
-.link-white,
-.link-red {
-  filter: invert(100%) sepia(1%) saturate(2%) hue-rotate(285deg)
-    brightness(104%) contrast(101%);
-  transition: filter 300ms ease, scale 300ms ease;
-}
-
-.nav__link:hover .link-white {
-  filter: invert(91%) sepia(30%) saturate(3043%) hue-rotate(326deg)
-    brightness(83%) contrast(85%);
-  scale: 1.05;
-}
-
-.nav__link:hover .link-red {
-  filter: invert(43%) sepia(70%) saturate(3225%) hue-rotate(328deg)
-    brightness(99%) contrast(105%);
-  scale: 1.05;
-}
-
 /* ********** HEADER ********** */
 
 .header__title {
+  font-weight: 700;
+  font-size: 72px;
   text-align: center;
-  margin-bottom: 32px;
+  margin-bottom: 8px;
+}
+
+.header__para {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 40px;
 }
 
 /* ----- Container ----- */
-.header__game-name {
+.header__champ-name {
   width: 100%;
   height: 80px;
   background-color: #3c3c41;
@@ -278,7 +190,7 @@ nav {
   margin-bottom: 6px;
 }
 
-.search__region--container,
+.search__role--container,
 .search__name--container {
   display: flex;
   flex-direction: column;
@@ -286,7 +198,7 @@ nav {
 }
 
 /* ----- Region ----- */
-.search__region--container {
+.search__role--container {
   width: calc(45% - 61px);
   padding-left: 32px;
   padding-right: 24px;
@@ -309,7 +221,7 @@ nav {
 }
 
 /* ----- Summoner Name ----- */
-.header__game-name::before {
+.header__champ-name::before {
   content: "";
   position: relative;
   left: calc(45% - 73px);
@@ -697,7 +609,7 @@ footer .row {
     right: 40px;
   }
 
-  .header__game-name {
+  .header__champ-name {
     height: 72px;
   }
 
@@ -709,7 +621,7 @@ footer .row {
     font-size: 16px;
   }
 
-  .header__game-name::before {
+  .header__champ-name::before {
     left: calc(45% - 69px);
   }
 
@@ -833,7 +745,7 @@ footer .row {
     font-size: 16px;
   }
 
-  .search__region--container {
+  .search__role--container {
     padding-left: 24px;
     padding-right: 16px;
   }
@@ -988,7 +900,7 @@ footer .row {
     right: 24px;
   }
 
-  .header__game-name {
+  .header__champ-name {
     height: 60px;
   }
 
@@ -996,7 +908,7 @@ footer .row {
     font-size: 12px;
   }
 
-  .search__region--container {
+  .search__role--container {
     width: calc(45% - 31px);
     padding-left: 20px;
     padding-right: 12px;
@@ -1006,7 +918,7 @@ footer .row {
     font-size: 10px;
   }
 
-  .header__game-name::before {
+  .header__champ-name::before {
     left: calc(45% - 37px);
     height: 30px;
   }
@@ -1175,7 +1087,7 @@ footer .row {
     margin-bottom: 16px;
   }
 
-  .header__game-name {
+  .header__champ-name {
     height: 40px;
   }
 
@@ -1184,7 +1096,7 @@ footer .row {
     margin-bottom: 0;
   }
 
-  .search__region--container {
+  .search__role--container {
     width: calc(45% - 31px);
     padding-left: 16px;
   }
@@ -1193,7 +1105,7 @@ footer .row {
     font-size: 10px;
   }
 
-  .header__game-name::before {
+  .header__champ-name::before {
     left: calc(45% - 37px);
     height: 20px;
   }
@@ -1366,7 +1278,7 @@ footer .row {
     right: 6px;
   }
 
-  .header__game-name {
+  .header__champ-name {
     height: 32px;
   }
 
@@ -1374,12 +1286,12 @@ footer .row {
     font-size: 10px;
   }
 
-  .search__region--container {
+  .search__role--container {
     width: calc(50% - 17px);
     padding-left: 8px;
   }
 
-  .header__game-name::before {
+  .header__champ-name::before {
     left: calc(50% - 23px);
     height: 16px;
   }
