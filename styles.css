@@ -93,16 +93,6 @@ button:hover {
   color: #c89b3c;
 }
 
-.not-allowed {
-  cursor: not-allowed;
-}
-
-.silver {
-  background: linear-gradient(#ffffff, #8f8f8f);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .container {
   width: 100%;
   padding: 80px 0;
@@ -110,8 +100,11 @@ button:hover {
 
 .row {
   width: 100%;
-  max-width: 1000px;
+  max-width: 1440px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .landing-page {
@@ -164,19 +157,28 @@ nav {
 .header__title {
   font-weight: 700;
   font-size: 72px;
-  text-align: center;
+  margin-bottom: 8px;
+}
+
+.header__subtitle {
   margin-bottom: 8px;
 }
 
 .header__para {
-  text-align: center;
   font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.header__sub-para {
+  font-size: 20px;
+  text-align: center;
   margin-bottom: 40px;
 }
 
-/* ----- Container ----- */
-.header__champ-name {
+/* ----- SEARCH BAR ----- */
+.search__main-bar {
   width: 100%;
+  max-width: 1280px;
   height: 80px;
   background-color: #3c3c41;
   border-radius: 200px;
@@ -197,7 +199,7 @@ nav {
   justify-content: center;
 }
 
-/* ----- Region ----- */
+/* ----- Role/Tags ----- */
 .search__role--container {
   width: calc(45% - 61px);
   padding-left: 32px;
@@ -220,8 +222,8 @@ nav {
   color: #dfdfdf;
 }
 
-/* ----- Summoner Name ----- */
-.header__champ-name::before {
+/* ----- Champion Name ----- */
+.search__main-bar::before {
   content: "";
   position: relative;
   left: calc(45% - 73px);
@@ -254,29 +256,25 @@ nav {
 }
 
 /* ********** CHAMPIONS ********** */
-/* ----- INDEX SECTION ----- */
-#index-champions .container {
+#champions .container {
   padding-top: 0;
   padding-bottom: 40px;
 }
 
-.index-champions__subtitle,
-.index-champions__para {
-  text-align: center;
-}
-
-.index-champions__display {
+/* ----- PREVIEW SECTION ----- */
+.champions__preview {
   position: relative;
   margin-top: 60px;
   width: 100%;
+  max-width: 1280px;
   height: 680px;
 }
 
-.index-champion--wrapper:last-child {
+.champ-preview--wrapper:last-child {
   width: 400px;
 }
 
-.index-champion--wrapper {
+.champ-preview--wrapper {
   position: absolute;
   width: 360px;
   border-radius: 24px;
@@ -284,28 +282,28 @@ nav {
   transition: scale 300ms ease;
 }
 
-.index-champion--wrapper:hover {
+.champ-preview--wrapper:hover {
   scale: 1.02;
 }
 
-.index-champ--one {
+.champ-preview--one {
   top: calc(50% - 300px);
   left: calc(50% - 200px);
 }
 
-.index-champ--two {
+.champ-preview--two {
   top: calc(60% - 270px);
   left: calc(22% - 180px);
   transform: rotate(345deg);
 }
 
-.index-champ--three {
+.champ-preview--three {
   top: calc(60% - 270px);
   right: calc(22% - 180px);
   transform: rotate(15deg);
 }
 
-.index-champion--img {
+.champ-preview--img {
   width: 100%;
   vertical-align: middle;
   background: linear-gradient(#010a13, #010a13) padding-box,
@@ -317,8 +315,8 @@ nav {
   border: 4px solid transparent;
 }
 
-/* ----- SUMMONERS SECTION ----- */
-#summoner-champions {
+/* ----- FULL CHAMPIONS LIST ----- */
+#champions {
   position: relative;
   border: 10px solid;
   border-image-slice: 1;
@@ -333,83 +331,36 @@ nav {
   justify-content: center;
 }
 
-.summoner__bg--img {
+.champions__bg--img {
   position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://wiki.leagueoflegends.com/en-us/images/Celestial_Realm.png?f80cb);
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    -webkit-filter: contrast(120%);
+    -moz-filter: contrast(120%);
+    -o-filter: contrast(120%);
+    -ms-filter: contrast(120%);
+    filter: contrast(120%);
+}
+
+.champions__list {
   width: 100%;
-  height: 100%;
-  background-image: url(https://wiki.leagueoflegends.com/en-us/images/Celestial_Realm.png?f80cb);
-  background-size: cover;
-  background-position: center;
-  z-index: -1;
-
-  -webkit-filter: contrast(120%);
-  -moz-filter: contrast(120%);
-  -o-filter: contrast(120%);
-  -ms-filter: contrast(120%);
-  filter: contrast(120%);
-}
-
-#summoner-champions .container {
-  padding: 40px 0;
-}
-#summoner-champions .row {
-  max-width: 1200px;
-}
-
-.summoner {
+  margin: 0 auto;
+  margin-top: 60px;
+  padding: 0 20px;
   display: flex;
   flex-wrap: wrap;
-}
-
-.summoner__loading {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 250px 0;
-}
-
-.summoner__loading--subtitle {
-  display: none !important;
-  -webkit-animation: fadeinout 3s linear forwards;
-  animation: fadeinout 3s linear forwards;
-  opacity: 0;
-}
-
-.summoner__loading .summoner__loading--subtitle {
-  display: block !important;
-}
-
-@-webkit-keyframes fadeinout {
-  0%, 100% { opacity: 0; }
-  25%, 75% { opacity: 1; }
-}
-
-@keyframes fadeinout {
-  0%, 100% { opacity: 0; }
-  25%, 75% { opacity: 1; }
-}
-
-.summoner__profile {
-  display: flex;
-  align-items: center;
   justify-content: space-between;
 }
 
-.summoner__profile--display {
-  display: flex;
-  align-items: center;
-  margin: 40px 0;
-}
-
-.summoner__profile--wrapper {
-  width: 100px;
-  border-radius: 24px;
-}
-
-.summoner__profile--img {
-  width: 100%;
+.champions__list--wrapper {
+  width: calc(25% - 16px);
+  margin: 12px 0;
   vertical-align: middle;
+  overflow: hidden;
   background: linear-gradient(#010a13, #010a13) padding-box,
     linear-gradient(#010a1380, #3c3c4180, #61616980, #3c3c4180, #010a1380)
       border-box,
@@ -417,94 +368,52 @@ nav {
       border-box;
   border-radius: 24px;
   border: 4px solid transparent;
+  transition: scale 300ms ease;
 }
 
-.summoner__profile--name {
-  font-size: 56px;
-  margin-left: 40px;
+.champions__list--wrapper:hover {
+  scale: 1.02;
 }
 
-.summoner__profile--filter {
-  display: flex;
-  align-items: center;
-}
-
-.summoner__profile--filter-sub {
-  font-size: 32px;
-  margin-right: 20px;
-}
-
-.summoner__filter {
-  margin-top: 4px;
-  margin-bottom: 0;
-  padding: 4px 8px;
-  border: 2px solid #010a1380;
-  background-color: #010a13;
-  appearance: auto;
-}
-
-.summoner__filter option {
-  background-color: #010a13;
-}
-
-.summoner-champion--wrapper {
-  width: 360px;
-  border-radius: 24px;
-  box-shadow: 0 0 24px #ffffff;
-}
-
-.summoner-champion__display {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.summoner-champion--img {
+.champions__list--img {
   width: 100%;
-  vertical-align: middle;
-  background: linear-gradient(#010a13, #010a13) padding-box,
-    linear-gradient(#010a1380, #3c3c4180, #61616980, #3c3c4180, #010a1380)
-      border-box,
-    linear-gradient(to right, #010a13, #3c3c41, #616169, #3c3c41, #010a13)
-      border-box;
-  border-radius: 24px;
-  border: 4px solid transparent;
+  transition: scale 300ms ease;
 }
 
-.champion--img {
-  width: auto;
+.champions__list--img:hover {
+  scale: 1.06;
 }
 
-.summoner-champion__info--container {
+.champions__list--description {
+  height: 76px;
+  margin-top: -4px;
+  background-color: #000000;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  margin: 0 64px;
+  z-index: 2;
 }
 
-.summoner-champion__name{
-  font-size: 100px;
+.champions__list--name {
+  font-size: 24px;
+  padding: 0 10px;
 }
 
-.summoner-champion__title {
-  font-size: 40px;
-  margin-bottom: 12px;
+.champions__list--tag-list {
+  padding: 0 10px;
 }
 
-.champion__title {
-  font-size: 48px;
-  margin-bottom: 60px;
+.champions__list--tag {
+  height: 28px;
+  filter: invert(71%) sepia(30%) saturate(1063%) hue-rotate(1deg)
+    brightness(108%) contrast(92%);
 }
 
-.summoner-champion__description {
-  color: #dfdfdf;
-  font-size: 32px;
-  text-align: center;
-}
-
-.champion--description {
-  text-align: justify;
-  font-size: 32px;
+.tag-divider {
+  margin: 0 4px;
+  font-size: 36px;
+  font-weight: 600;
+  color: #f5c529;
 }
 
 /* ********** FOOTER ********** */
@@ -533,7 +442,6 @@ footer .row {
 
 .footer__social--link {
   font-size: 24px;
-  text-align: center;
   transition: color 300ms ease;
 }
 
@@ -581,7 +489,7 @@ footer .row {
   }
 
   .row {
-    max-width: 840px;
+    max-width: 1000px;
   }
 
   .main__logo--wrapper {
@@ -609,7 +517,7 @@ footer .row {
     right: 40px;
   }
 
-  .header__champ-name {
+  .search__main-bar {
     height: 72px;
   }
 
@@ -621,7 +529,7 @@ footer .row {
     font-size: 16px;
   }
 
-  .header__champ-name::before {
+  .search__main-bar::before {
     left: calc(45% - 69px);
   }
 
@@ -629,29 +537,29 @@ footer .row {
     font-size: 24px;
   }
 
-  .index-champion--wrapper:last-child {
+  .champ-preview--wrapper:last-child {
     width: 360px;
   }
 
-  .index-champions__display {
+  .champions__preview {
     height: 600px;
   }
 
-  .index-champion--wrapper {
+  .champ-preview--wrapper {
     width: 320px;
   }
 
-  .index-champ--one {
+  .champ-preview--one {
     top: calc(50% - 270px);
     left: calc(50% - 180px);
   }
 
-  .index-champ--two {
+  .champ-preview--two {
     top: calc(60% - 240px);
     left: calc(20% - 160px);
   }
 
-  .index-champ--three {
+  .champ-preview--three {
     top: calc(60% - 240px);
     right: calc(20% - 160px);
   }
@@ -713,34 +621,6 @@ footer .row {
     border: 2px solid transparent;
   }
 
-  .nav__link {
-    margin-right: 16px;
-  }
-
-  .riot__logo--wrapper {
-    width: 24px;
-    margin-right: 8px;
-  }
-
-  .riot__link--wrapper {
-    width: 72px;
-  }
-
-  .valorant .riot__logo--wrapper {
-    width: 36px;
-  }
-
-  .valorant .riot__link--wrapper {
-    width: 92px;
-  }
-
-  .valorant .tooltiptext {
-    width: 124px;
-    font-size: 12px;
-    top: 48px;
-    right: 24px;
-  }
-
   .search__para {
     font-size: 16px;
   }
@@ -758,62 +638,39 @@ footer .row {
     font-size: 20px;
   }
 
-  .index-champion--wrapper:last-child {
+  .champ-preview--wrapper:last-child {
     width: 280px;
   }
 
-  .index-champions__display {
+  .champions__preview {
     height: 480px;
   }
 
-  .index-champion--wrapper {
+  .champ-preview--wrapper {
     width: 240px;
   }
 
-  .index-champ--one {
+  .champ-preview--one {
     top: calc(50% - 210px);
     left: calc(50% - 140px);
   }
 
-  .index-champ--two {
+  .champ-preview--two {
     top: calc(61% - 180px);
     left: calc(23% - 120px);
   }
 
-  .index-champ--three {
+  .champ-preview--three {
     top: calc(61% - 180px);
     right: calc(23% - 120px);
   }
 
-  .index-champion--img {
+  .champ-preview--img {
     border-radius: 20px;
   }
 
-  #summoner-champions .container {
-    padding: 24px 0;
-  }
-
-  #summoner-champions .row {
-    max-width: 680px;
-  }
-
-  .summoner-champion--wrapper {
-    width: 320px;
-    border-radius: 20px;
-    box-shadow: 0 0 20px #ffffff;
-  }
-
-  .summoner-champion--img {
-    border-radius: 20px;
-  }
-
-  .summoner-champion__title {
-    font-size: 36px;
-    margin-bottom: 8px;
-  }
-
-  .summoner-champion__description {
-    font-size: 20px;
+  .champions__list--wrapper {
+    width: calc(50% - 8px);
   }
 
   footer .container {
@@ -900,7 +757,7 @@ footer .row {
     right: 24px;
   }
 
-  .header__champ-name {
+  .search__main-bar {
     height: 60px;
   }
 
@@ -918,7 +775,7 @@ footer .row {
     font-size: 10px;
   }
 
-  .header__champ-name::before {
+  .search__main-bar::before {
     left: calc(45% - 37px);
     height: 30px;
   }
@@ -929,34 +786,34 @@ footer .row {
     font-size: 16px;
   }
 
-  .index-champion--wrapper:last-child {
+  .champ-preview--wrapper:last-child {
     width: 200px;
   }
 
-  .index-champions__display {
+  .champions__preview {
     height: 320px;
   }
 
-  .index-champion--wrapper {
+  .champ-preview--wrapper {
     width: 160px;
   }
 
-  .index-champ--one {
+  .champ-preview--one {
     top: calc(50% - 150px);
     left: calc(50% - 100px);
   }
 
-  .index-champ--two {
+  .champ-preview--two {
     top: calc(60% - 120px);
     left: calc(24% - 80px);
   }
 
-  .index-champ--three {
+  .champ-preview--three {
     top: calc(60% - 120px);
     right: calc(24% - 80px);
   }
 
-  .index-champion--img {
+  .champ-preview--img {
     border-radius: 16px;
   }
 
@@ -968,13 +825,13 @@ footer .row {
     max-width: 560px;
   }
 
-  .summoner-champion--wrapper {
+  .summoner-champ-preview--wrapper {
     width: 240px;
     border-radius: 16px;
     box-shadow: 0 0 16px #ffffff;
   }
 
-  .summoner-champion--img {
+  .summoner-champ-preview--img {
     border-radius: 16px;
   }
 
@@ -1087,7 +944,7 @@ footer .row {
     margin-bottom: 16px;
   }
 
-  .header__champ-name {
+  .search__main-bar {
     height: 40px;
   }
 
@@ -1105,7 +962,7 @@ footer .row {
     font-size: 10px;
   }
 
-  .header__champ-name::before {
+  .search__main-bar::before {
     left: calc(45% - 37px);
     height: 20px;
   }
@@ -1116,35 +973,35 @@ footer .row {
     font-size: 12px;
   }
 
-  .index-champion--wrapper:last-child {
+  .champ-preview--wrapper:last-child {
     width: 160px;
   }
 
-  .index-champions__display {
+  .champions__preview {
     height: 280px;
     margin-top: 32px;
   }
 
-  .index-champion--wrapper {
+  .champ-preview--wrapper {
     width: 120px;
   }
 
-  .index-champ--one {
+  .champ-preview--one {
     top: calc(50% - 120px);
     left: calc(50% - 80px);
   }
 
-  .index-champ--two {
+  .champ-preview--two {
     top: calc(60% - 80px);
     left: calc(25% - 60px);
   }
 
-  .index-champ--three {
+  .champ-preview--three {
     top: calc(60% - 80px);
     right: calc(25% - 60px);
   }
 
-  .index-champion--img {
+  .champ-preview--img {
     border-radius: 12px;
     border: 2px solid transparent;
   }
@@ -1157,13 +1014,13 @@ footer .row {
     max-width: 420px;
   }
 
-  .summoner-champion--wrapper {
+  .summoner-champ-preview--wrapper {
     width: 120px;
     border-radius: 12px;
     box-shadow: 0 0 12px #ffffff;
   }
 
-  .summoner-champion--img {
+  .summoner-champ-preview--img {
     border-radius: 12px;
     border: 2px solid transparent;
   }
@@ -1278,7 +1135,7 @@ footer .row {
     right: 6px;
   }
 
-  .header__champ-name {
+  .search__main-bar {
     height: 32px;
   }
 
@@ -1291,7 +1148,7 @@ footer .row {
     padding-left: 8px;
   }
 
-  .header__champ-name::before {
+  .search__main-bar::before {
     left: calc(50% - 23px);
     height: 16px;
   }
@@ -1306,39 +1163,39 @@ footer .row {
     font-size: 10px;
   }
 
-  .index-champions__display {
+  .champions__preview {
     height: 180px;
     margin-top: 16px;
   }
 
-  .index-champion--wrapper:last-child {
+  .champ-preview--wrapper:last-child {
     width: 100px;
   }
 
-  .index-champion--wrapper {
+  .champ-preview--wrapper {
     width: 80px;
   }
 
-  .index-champ--one {
+  .champ-preview--one {
     top: calc(50% - 75px);
     left: calc(50% - 50px);
   }
 
-  .index-champ--two {
+  .champ-preview--two {
     top: calc(60% - 50px);
     left: calc(30% - 40px);
   }
 
-  .index-champ--three {
+  .champ-preview--three {
     top: calc(60% - 50px);
     right: calc(30% - 40px);
   }
 
-  .index-champion--img {
+  .champ-preview--img {
     border-radius: 8px;
   }
 
-  .summoner-champions__display {
+  .summoner-champions__preview {
     justify-content: space-between;
   }
 

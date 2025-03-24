@@ -12,7 +12,7 @@
       src="https://kit.fontawesome.com/fe84bccaa2.js"
       crossorigin="anonymous"
     ></script>
-    <script defer src="index.js"></script>
+    <script defer src="champions.js"></script>
   </head>
   <body>
     <section class="landing-page">
@@ -29,15 +29,22 @@
           <div class="row">
             <h1 class="header__title">List of Champions</h1>
             <h3 class="header__para">
-              Over a 100+ champions to match your playstyle. Find what best fits
+              Over 100+ champions to match your playstyle. Find what best fits
               for you!
             </h3>
-            <div id="champ-name__form" class="header__champ-name">
+            <h2 class="header__subtitle">
+              View all the available champions in the game!
+            </h2>
+            <p class="header__sub-para">
+              Use the search bar above to directly search for a champion, or
+              filter and search for champions from specific classes.
+            </p>
+            <div class="search__main-bar">
               <div class="search__role--container">
                 <p class="search__para"><small>Role</small></p>
                 <div class="search__select--container">
                   <select id="role">
-                    <option value="All" selected >All Classes</option>
+                    <option value="All" selected>All Classes</option>
                     <option value="Assassin">Assassin</option>
                     <option value="Fighter">Fighter</option>
                     <option value="Mage">Mage</option>
@@ -64,34 +71,190 @@
               <button
                 id="champ-name__submit"
                 class="search__submit"
-                onclick="storeSummonerInfo()"
+                onclick="searchChampions()"
               >
                 <i class="fa-solid fa-magnifying-glass"></i>
               </button>
-            </form>
+            </div>
+            
           </div>
         </div>
       </header>
     </section>
-    <section id="index-champions">
+    <section id="champions">
+      <canvas class="champions__bg--img">
+      </canvas>
       <div class="container">
         <div class="row">
-          <h2 class="index-champions__subtitle">
-            View all the available champions in the game!
-          </h2>
-          <p class="index-champions__para">
-            Use the search bar above to directly search for a champion, or
-            filter and search for champions from specific classes.
-          </p>
-          <div class="index-champions__display">
-            <div class="index-champion--wrapper index-champ--two">
-              <img src="assets/null_champ-bg.jpg" class="index-champion--img" />
+          <div class="champions__preview">
+            <div class="champ-preview--wrapper champ-preview--two">
+              <img src="assets/null_champ-bg.jpg" class="champ-preview--img" />
             </div>
-            <div class="index-champion--wrapper index-champ--three">
-              <img src="assets/null_champ-bg.jpg" class="index-champion--img" />
+            <div class="champ-preview--wrapper champ-preview--three">
+              <img src="assets/null_champ-bg.jpg" class="champ-preview--img" />
             </div>
-            <div class="index-champion--wrapper index-champ--one">
-              <img src="assets/null_champ-bg.jpg" class="index-champion--img" />
+            <div class="champ-preview--wrapper champ-preview--one">
+              <img src="assets/null_champ-bg.jpg" class="champ-preview--img" />
+            </div>
+          </div>
+          <div class="champions__list">
+            <div class="champions__list--wrapper">
+              <img
+                src="https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Jhin_0.jpg"
+                alt=""
+                class="champions__list--img"
+              />
+              <div class="champions__list--description">
+                <h3 class="champions__list--name">Jhin</h3>
+                <div class="champions__list--tag-list">
+                  <img
+                    src="https://www.leagueoflegends.com/_next/static/node_modules/@riotgames/blades-ui/dist/skins/common/assets/roleMarksman.svg"
+                    class="champions__list--tag"
+                  />
+                  <span class="tag-divider">/</span>
+                  <img
+                    src="https://www.leagueoflegends.com/_next/static/node_modules/@riotgames/blades-ui/dist/skins/common/assets/roleMage.svg"
+                    class="champions__list--tag"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="champions__list--wrapper">
+              <img
+                src="https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Nunu_0.jpg"
+                alt=""
+                class="champions__list--img"
+              />
+              <div class="champions__list--description">
+                <h3 class="champions__list--name">Nunu & Willump</h3>
+                <div class="champions__list--tag-list">
+                  <img
+                    src="https://www.leagueoflegends.com/_next/static/node_modules/@riotgames/blades-ui/dist/skins/common/assets/roleTank.svg"
+                    class="champions__list--tag"
+                  />
+                  <span class="tag-divider">/</span>
+                  <img
+                    src="https://www.leagueoflegends.com/_next/static/node_modules/@riotgames/blades-ui/dist/skins/common/assets/roleMage.svg"
+                    class="champions__list--tag"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="champions__list--wrapper">
+              <img
+                src="https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Belveth_0.jpg"
+                alt=""
+                class="champions__list--img"
+              />
+              <div class="champions__list--description">
+                <h3 class="champions__list--name">Bel'Veth</h3>
+                <div class="champions__list--tag-list">
+                  <img
+                    src="https://www.leagueoflegends.com/_next/static/node_modules/@riotgames/blades-ui/dist/skins/common/assets/roleFighter.svg"
+                    class="champions__list--tag"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="champions__list--wrapper">
+              <img
+                src="https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Ahri_0.jpg"
+                alt=""
+                class="champions__list--img"
+              />
+              <div class="champions__list--description">
+                <h3 class="champions__list--name">Ahri</h3>
+                <div class="champions__list--tag-list">
+                  <img
+                    src="https://www.leagueoflegends.com/_next/static/node_modules/@riotgames/blades-ui/dist/skins/common/assets/roleMage.svg"
+                    class="champions__list--tag"
+                  />
+                  <span class="tag-divider">/</span>
+                  <img
+                    src="https://www.leagueoflegends.com/_next/static/node_modules/@riotgames/blades-ui/dist/skins/common/assets/roleAssassin.svg"
+                    class="champions__list--tag"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="champions__list--wrapper">
+              <img
+                src="https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Jhin_0.jpg"
+                alt=""
+                class="champions__list--img"
+              />
+              <div class="champions__list--description">
+                <h3 class="champions__list--name">Jhin</h3>
+                <div class="champions__list--tag-list">
+                  <img
+                    src="https://www.leagueoflegends.com/_next/static/node_modules/@riotgames/blades-ui/dist/skins/common/assets/roleMarksman.svg"
+                    class="champions__list--tag"
+                  />
+                  <span class="tag-divider">/</span>
+                  <img
+                    src="https://www.leagueoflegends.com/_next/static/node_modules/@riotgames/blades-ui/dist/skins/common/assets/roleMage.svg"
+                    class="champions__list--tag"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="champions__list--wrapper">
+              <img
+                src="https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Nunu_0.jpg"
+                alt=""
+                class="champions__list--img"
+              />
+              <div class="champions__list--description">
+                <h3 class="champions__list--name">Nunu & Willump</h3>
+                <div class="champions__list--tag-list">
+                  <img
+                    src="https://www.leagueoflegends.com/_next/static/node_modules/@riotgames/blades-ui/dist/skins/common/assets/roleTank.svg"
+                    class="champions__list--tag"
+                  />
+                  <span class="tag-divider">/</span>
+                  <img
+                    src="https://www.leagueoflegends.com/_next/static/node_modules/@riotgames/blades-ui/dist/skins/common/assets/roleMage.svg"
+                    class="champions__list--tag"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="champions__list--wrapper">
+              <img
+                src="https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Belveth_0.jpg"
+                alt=""
+                class="champions__list--img"
+              />
+              <div class="champions__list--description">
+                <h3 class="champions__list--name">Bel'Veth</h3>
+                <div class="champions__list--tag-list">
+                  <img
+                    src="https://www.leagueoflegends.com/_next/static/node_modules/@riotgames/blades-ui/dist/skins/common/assets/roleFighter.svg"
+                    class="champions__list--tag"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="champions__list--wrapper">
+              <img
+                src="https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Ahri_0.jpg"
+                alt=""
+                class="champions__list--img"
+              />
+              <div class="champions__list--description">
+                <h3 class="champions__list--name">Ahri</h3>
+                <div class="champions__list--tag-list">
+                  <img
+                    src="https://www.leagueoflegends.com/_next/static/node_modules/@riotgames/blades-ui/dist/skins/common/assets/roleMage.svg"
+                    class="champions__list--tag"
+                  />
+                  <span class="tag-divider">/</span>
+                  <img
+                    src="https://www.leagueoflegends.com/_next/static/node_modules/@riotgames/blades-ui/dist/skins/common/assets/roleAssassin.svg"
+                    class="champions__list--tag"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
