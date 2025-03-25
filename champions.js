@@ -40,7 +40,7 @@ async function renderChampions() {
     let tempTags = listChampions[key].tags;
     
     championsHTML += `<div class="champions__list--wrapper">
-  <a href="https://www.leagueoflegends.com/en-us/champions/${key.toLowerCase()}/">
+  <a href="https://www.leagueoflegends.com/en-us/champions/${key.toLowerCase()}/" title="${tempTitle.charAt(0).toUpperCase()+tempTitle.slice(1)}">
     <img
       src="https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${key}_0.jpg"
       class="champions__list--img"
