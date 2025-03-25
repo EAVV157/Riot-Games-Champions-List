@@ -30,37 +30,47 @@ async function getChampions(version) {
 /* ----- MAIN ASYNC LOADING FUNCTION ----- */
 async function renderChampions() {
   const currentVersion = await getVersion();
-  console.log(currentVersion);
-  const existingChampions = await getChampions(currentVersion);
-  console.log(existingChampions);
+  const listChampions = await getChampions(currentVersion);
 
-  for (var key in existingChampions) {
-    let tempName = existingChampions[key].name;
-    let tempId = existingChampions[key].key;
-    let tempTitle = existingChampions[key].title;
-    let tempTags = existingChampions[key].tags;
-    console.log("(" + key.toLowerCase() + ") "+ tempName + ": " + tempId + ", " + tempTitle + ", " + tempTags.join('/'));
-
-
+  let championsHTML = ``;
+  for (var key in listChampions) {
+    let tempName = listChampions[key].name;
+    let tempId = listChampions[key].key;
+    let tempTitle = listChampions[key].title;
+    let tempTags = listChampions[key].tags;
+    
+    championsHTML += `<div class="champions__list--wrapper">
+  <a href="https://www.leagueoflegends.com/en-us/champions/${key.toLowerCase()}/">
+    <img
+      src="https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${key}_0.jpg"
+      class="champions__list--img"
+    />
+    <div class="champions__list--description">
+      <p class="champions__list--name">${tempName}</p>
+      <div class="champions__list--tag-list">
+        <img
+          src="https://www.leagueoflegends.com/_next/static/node_modules/@riotgames/blades-ui/dist/skins/common/assets/role${tempTags[0]}.svg"
+          class="champions__list--tag"
+        />`;
+    if (tempTags.length == 2) {
+      championsHTML += `\n        <span class="tag-divider">/</span>
+        <img
+          src="https://www.leagueoflegends.com/_next/static/node_modules/@riotgames/blades-ui/dist/skins/common/assets/role${tempTags[1]}.svg"
+          class="champions__list--tag"
+        />`;
+    }
+    championsHTML += `\n      </div>
+    </div>
+  </a>
+</div>\n`;
+    
   }
-
-  
-
-  /* if (role === "Assassin") {
-    champs.sort(
-      (a, b) =>
-        
-    );
-  }
-  else if(role === "All") {
-    champs.sort(
-      (a, b) => a.name
-    );
-  } */
+  const championsListDiv = document.querySelector(".champions__list");
+  championsListDiv.innerHTML = championsHTML;
 }
 
 /* ----- PAGE LOADING TIMERS ----- */
-const fadeOutTime = 2500;
+const fadeOutTime = 3000;
 /* --- Preview Fadeout --- */
 setTimeout(() => {
   const preview = document.querySelector(".champions__preview");
@@ -75,53 +85,4 @@ setTimeout(() => {
 /* --- Champions Fadein */
 setTimeout(() => {
   renderChampions();
-}, Math.random() * 2000 + fadeOutTime);
-
-
-
-
-
-
-
-
-
-
-
-/* ----- Remove the Loading HTML from the webpage ----- */
-/* const summonerLoading = document.querySelector(".summoner");
-summonerLoading.classList.remove("summoner__loading"); */
-
-async function renderChampions1(status, filter) {
-  var topChampsAmmount = filter;
-  const summonerWrapper = document.querySelector(".summoner");
-  console.log(summonerWrapper);
-  const summoner = await getAccount();
-  summonerWrapper.classList.remove(".summoner__loading");
-  const summonerHTML = ``;
-
-  if (status /* === '404' */) {
-    summonerHTML = `<div class="summoner-champion__display">
-            <div class="summoner-champion--wrapper">
-              <img
-              src="assets/null_champ-bg.jpg"
-              class="summoner-champion--img"
-              >
-            </div>
-            <div class="summoner-champion__info--container">
-              <h3 class="summoner-champion__title">Summoner not found</h3>
-              <p class="summoner-champion__description">
-                Verify that the summoner name and/or the #TAG is correctly
-                written.
-              </p>
-            </div>
-          </div>`;
-  } else {
-    summonerHTML = summoner
-      .map((champions) => {
-        return ``;
-      })
-      .join("");
-  }
-
-  summonerWrapper.innerHTML = summonerHTML;
-}
+}, Math.random() * 2000 + fadeOutTime + 500);

@@ -259,15 +259,20 @@ nav {
 #champions .container {
   padding-top: 0;
   padding-bottom: 40px;
+  min-height: 900px;
 }
 
 /* ----- PREVIEW SECTION ----- */
+.champions__preview--title {
+  text-align: center;
+}
+
 .champions__preview {
   position: relative;
   margin-top: 60px;
   width: 100%;
-  max-width: 1280px;
   height: 680px;
+  max-width: 1280px;
 }
 
 .champ-preview--wrapper:last-child {
@@ -287,18 +292,18 @@ nav {
 }
 
 .champ-preview--one {
-  top: calc(50% - 300px);
+  top: calc(50% - 200px);
   left: calc(50% - 200px);
 }
 
 .champ-preview--two {
-  top: calc(60% - 270px);
+  top: calc(60% - 170px);
   left: calc(22% - 180px);
   transform: rotate(345deg);
 }
 
 .champ-preview--three {
-  top: calc(60% - 270px);
+  top: calc(60% - 170px);
   right: calc(22% - 180px);
   transform: rotate(15deg);
 }
@@ -338,6 +343,7 @@ nav {
     background-image: url(https://wiki.leagueoflegends.com/en-us/images/Celestial_Realm.png?f80cb);
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     z-index: -1;
     -webkit-filter: contrast(120%);
     -moz-filter: contrast(120%);
@@ -353,12 +359,12 @@ nav {
   padding: 0 20px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .champions__list--wrapper {
   width: calc(25% - 16px);
-  margin: 12px 0;
+  margin: 12px 8px;
   vertical-align: middle;
   overflow: hidden;
   background: linear-gradient(#010a13, #010a13) padding-box,
@@ -391,7 +397,6 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 2;
 }
 
 .champions__list--name {
@@ -401,6 +406,8 @@ nav {
 
 .champions__list--tag-list {
   padding: 0 10px;
+  display: flex;
+  align-items: center;
 }
 
 .champions__list--tag {
@@ -496,27 +503,6 @@ footer .row {
     width: 88px;
   }
 
-  .riot__logo--wrapper {
-    width: 36px;
-  }
-
-  .riot__link--wrapper {
-    width: 92px;
-  }
-
-  .valorant .riot__logo--wrapper {
-    width: 48px;
-  }
-
-  .valorant .riot__link--wrapper {
-    width: 120px;
-  }
-
-  .valorant .tooltiptext {
-    top: 90px;
-    right: 40px;
-  }
-
   .search__main-bar {
     height: 72px;
   }
@@ -537,6 +523,10 @@ footer .row {
     font-size: 24px;
   }
 
+  #champions .container {
+    min-height: 840px;
+  }
+
   .champ-preview--wrapper:last-child {
     width: 360px;
   }
@@ -550,30 +540,40 @@ footer .row {
   }
 
   .champ-preview--one {
-    top: calc(50% - 270px);
+    top: calc(50% - 190px);
     left: calc(50% - 180px);
   }
 
   .champ-preview--two {
-    top: calc(60% - 240px);
+    top: calc(60% - 160px);
     left: calc(20% - 160px);
   }
 
   .champ-preview--three {
-    top: calc(60% - 240px);
+    top: calc(60% - 160px);
     right: calc(20% - 160px);
   }
 
-  #summoner-champions .row {
-    max-width: 960px;
+  .champions__list--description {
+    height: 54px;
   }
 
-  .summoner-champion__title {
-    font-size: 48px;
+  .champions__list--name {
+    font-size: 18px;
+    padding: 0 0 0 4px;
   }
 
-  .summoner-champion__description {
+  .champions__list--tag-list {
+    padding: 0 4px;
+  }
+
+  .champions__list--tag {
+    height: 20px;
+  }
+  
+  .tag-divider {
     font-size: 24px;
+    font-weight: 500;
   }
 
   .footer__social--list {
@@ -621,6 +621,22 @@ footer .row {
     border: 2px solid transparent;
   }
 
+  .header__title {
+    font-size: 60px;
+  }
+
+  .header__para {
+    font-size: 20px;
+  }
+
+  .header__subtitle {
+    font-size: 28px;
+  }
+
+  .header__sub-para {
+    font-size: 16px;
+  }
+
   .search__para {
     font-size: 16px;
   }
@@ -638,6 +654,10 @@ footer .row {
     font-size: 20px;
   }
 
+  #champions .container {
+    min-height: 600px;
+  }
+
   .champ-preview--wrapper:last-child {
     width: 280px;
   }
@@ -651,17 +671,17 @@ footer .row {
   }
 
   .champ-preview--one {
-    top: calc(50% - 210px);
+    top: calc(50% - 180px);
     left: calc(50% - 140px);
   }
 
   .champ-preview--two {
-    top: calc(61% - 180px);
+    top: calc(61% - 150px);
     left: calc(23% - 120px);
   }
 
   .champ-preview--three {
-    top: calc(61% - 180px);
+    top: calc(61% - 150px);
     right: calc(23% - 120px);
   }
 
@@ -670,7 +690,29 @@ footer .row {
   }
 
   .champions__list--wrapper {
-    width: calc(50% - 8px);
+    width: calc(50% - 16px);
+  }
+
+  .champions__list--description {
+    height: 76px;
+  }
+
+  .champions__list--name {
+    font-size: 24px;
+    padding: 0 8px;
+  }
+
+  .champions__list--tag-list {
+    padding: 0 8px;
+  }
+
+  .champions__list--tag {
+    height: 28px;
+  }
+  
+  .tag-divider {
+    font-size: 36px;
+    font-weight: 600;
   }
 
   footer .container {
@@ -730,31 +772,20 @@ footer .row {
     padding-left: 12px;
   }
 
-  .nav__link {
-    margin-right: 8px;
+  .header__title {
+    font-size: 40px;
   }
 
-  .riot__logo--wrapper {
-    width: 20px;
+  .header__para {
+    font-size: 16px;
   }
 
-  .riot__link--wrapper {
-    width: 64px;
+  .header__subtitle {
+    font-size: 24px;
   }
 
-  .valorant .riot__logo--wrapper {
-    width: 28px;
-  }
-
-  .valorant .riot__link--wrapper {
-    width: 80px;
-  }
-
-  .valorant .tooltiptext {
-    width: 100px;
-    font-size: 10px;
-    top: 36px;
-    right: 24px;
+  .header__sub-para {
+    font-size: 12px;
   }
 
   .search__main-bar {
@@ -786,6 +817,10 @@ footer .row {
     font-size: 16px;
   }
 
+  #champions .container {
+    min-height: 480px;
+  }
+
   .champ-preview--wrapper:last-child {
     width: 200px;
   }
@@ -799,17 +834,17 @@ footer .row {
   }
 
   .champ-preview--one {
-    top: calc(50% - 150px);
+    top: calc(50% - 110px);
     left: calc(50% - 100px);
   }
 
   .champ-preview--two {
-    top: calc(60% - 120px);
+    top: calc(60% - 80px);
     left: calc(24% - 80px);
   }
 
   .champ-preview--three {
-    top: calc(60% - 120px);
+    top: calc(60% - 80px);
     right: calc(24% - 80px);
   }
 
@@ -817,35 +852,26 @@ footer .row {
     border-radius: 16px;
   }
 
-  #summoner-champions .container {
-    padding: 20px 0;
+  .champions__list--description {
+    height: 54px;
   }
 
-  #summoner-champions .row {
-    max-width: 560px;
-  }
-
-  .summoner-champ-preview--wrapper {
-    width: 240px;
-    border-radius: 16px;
-    box-shadow: 0 0 16px #ffffff;
-  }
-
-  .summoner-champ-preview--img {
-    border-radius: 16px;
-  }
-
-  .summoner-champion__info--container {
-    margin: 0 32px;
-  }
-
-  .summoner-champion__title {
-    font-size: 24px;
-    margin-bottom: 8px;
-  }
-
-  .summoner-champion__description {
+  .champions__list--name {
     font-size: 16px;
+    padding: 0 8px;
+  }
+
+  .champions__list--tag-list {
+    padding: 0 8px;
+  }
+
+  .champions__list--tag {
+    height: 20px;
+  }
+  
+  .tag-divider {
+    font-size: 24px;
+    font-weight: 500;
   }
 
   footer .container {
@@ -909,31 +935,20 @@ footer .row {
     padding-left: 8px;
   }
 
-  .nav__link {
-    margin-right: 6px;
+  .header__title {
+    font-size: 32px;
   }
 
-  .riot__logo--wrapper {
-    width: 16px;
+  .header__para {
+    font-size: 12px;
   }
 
-  .riot__link--wrapper {
-    width: 48px;
+  .header__subtitle {
+    font-size: 20px;
   }
 
-  .valorant .riot__logo--wrapper {
-    width: 20px;
-  }
-
-  .valorant .riot__link--wrapper {
-    width: 64px;
-  }
-
-  .valorant .tooltiptext {
-    width: 76px;
-    font-size: 10px;
-    top: 32px;
-    right: 20px;
+  .header__sub-para {
+    font-size: 12px;
   }
 
   #index--champions .container {
@@ -987,17 +1002,17 @@ footer .row {
   }
 
   .champ-preview--one {
-    top: calc(50% - 120px);
+    top: calc(50% - 90px);
     left: calc(50% - 80px);
   }
 
   .champ-preview--two {
-    top: calc(60% - 80px);
+    top: calc(60% - 50px);
     left: calc(25% - 60px);
   }
 
   .champ-preview--three {
-    top: calc(60% - 80px);
+    top: calc(60% - 50px);
     right: calc(25% - 60px);
   }
 
@@ -1006,36 +1021,26 @@ footer .row {
     border: 2px solid transparent;
   }
 
-  #summoner-champions .container {
-    padding: 16px 0;
+  .champions__list--description {
+    height: 40px;
   }
 
-  #summoner-champions .row {
-    max-width: 420px;
-  }
-
-  .summoner-champ-preview--wrapper {
-    width: 120px;
-    border-radius: 12px;
-    box-shadow: 0 0 12px #ffffff;
-  }
-
-  .summoner-champ-preview--img {
-    border-radius: 12px;
-    border: 2px solid transparent;
-  }
-
-  .summoner-champion__info--container {
-    margin: 0 16px;
-  }
-
-  .summoner-champion__title {
-    font-size: 20px;
-    margin-bottom: 4px;
-  }
-
-  .summoner-champion__description {
+  .champions__list--name {
     font-size: 12px;
+    padding: 0 4px;
+  }
+
+  .champions__list--tag-list {
+    padding: 0 4px;
+  }
+
+  .champions__list--tag {
+    height: 16px;
+  }
+  
+  .tag-divider {
+    font-size: 22px;
+    font-weight: 400;
   }
 
   footer .container {
@@ -1113,26 +1118,20 @@ footer .row {
     padding-left: 4px;
   }
 
-  .riot__logo--wrapper {
-    width: 12px;
+  .header__title {
+    font-size: 28px;
   }
 
-  .riot__link--wrapper {
-    width: 32px;
+  .header__para {
+    font-size: 10px;
   }
 
-  .valorant .riot__logo--wrapper {
-    width: 14px;
+  .header__subtitle {
+    font-size: 16px;
   }
 
-  .valorant .riot__link--wrapper {
-    width: 48px;
-  }
-
-  .valorant .tooltiptext {
-    width: 72px;
-    top: 24px;
-    right: 6px;
+  .header__sub-para {
+    font-size: 10px;
   }
 
   .search__main-bar {
@@ -1195,12 +1194,26 @@ footer .row {
     border-radius: 8px;
   }
 
-  .summoner-champions__preview {
-    justify-content: space-between;
+  .champions__list--description {
+    height: 32px;
   }
 
-  .summoner-champion__info--container {
-    margin: 0 8px;
+  .champions__list--name {
+    font-size: 10px;
+    padding: 0 4px;
+  }
+
+  .champions__list--tag-list {
+    padding: 0 4px;
+  }
+
+  .champions__list--tag {
+    height: 12px;
+  }
+  
+  .tag-divider {
+    font-size: 18px;
+    font-weight: 300;
   }
 
   footer .container {
