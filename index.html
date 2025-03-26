@@ -43,7 +43,7 @@
               <div class="search__role--container">
                 <p class="search__para"><small>Role</small></p>
                 <div class="search__select--container">
-                  <select id="role">
+                  <select id="role" onchange="filterChampionsByTags()">
                     <option value="All" selected>All Classes</option>
                     <option value="Assassin">Assassin</option>
                     <option value="Fighter">Fighter</option>
@@ -68,13 +68,6 @@
                   required
                 />
               </div>
-              <button
-                id="champ-name__submit"
-                class="search__submit"
-                onclick="searchChampions()"
-              >
-                <i class="fa-solid fa-magnifying-glass"></i>
-              </button>
             </div>
           </div>
         </div>
